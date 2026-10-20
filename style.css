@@ -1,0 +1,351 @@
+:root{
+  --navy:#232a4a;
+  --wine:#7e2236;
+  --cream:#f6f1e7;
+  --ink:#1a1a1a;
+  --sub:#4d4a55;
+  --line:#d9d4ca;
+  --bg:#ffffff;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+  font-size:17px;line-height:1.85;letter-spacing:.02em}
+a{color:var(--navy)}
+img{max-width:100%;height:auto}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+
+/* ヘッダー */
+.site-header{border-bottom:1px solid var(--line);background:#fff}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.brand{display:block;line-height:0}
+.brand img{height:40px;width:auto}
+.nav{display:flex;gap:4px 18px;flex-wrap:wrap;font-size:15px}
+.nav a{text-decoration:none;color:var(--navy);padding:4px 0;border-bottom:2px solid transparent}
+.nav a[aria-current="page"]{border-bottom-color:var(--wine);font-weight:600}
+
+/* 見出しの帯 */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:0;top:0;bottom:0;width:10px;background:var(--wine)}
+.hero .wrap{padding-top:44px;padding-bottom:44px}
+.hero .svc{color:#f1cdd3;font-size:15px;letter-spacing:.08em;margin:0 0 8px}
+.hero h1{font-size:28px;line-height:1.5;margin:0 0 12px;letter-spacing:.04em}
+.hero p{margin:0;opacity:.95}
+.nw{display:inline-block}
+.page-title{background:var(--cream);border-bottom:1px solid var(--line)}
+.page-title .wrap{padding-top:28px;padding-bottom:24px}
+.page-title h1{margin:0;font-size:26px;color:var(--navy);letter-spacing:.04em}
+
+/* 本文 */
+main{padding:12px 0 56px}
+section{margin-top:40px}
+h2{font-size:21px;color:var(--navy);margin:0 0 14px;padding-left:12px;border-left:5px solid var(--wine);line-height:1.5}
+h3{font-size:18px;color:var(--navy);margin:28px 0 8px}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:1.5em}
+li{margin:2px 0}
+
+/* 相談の流れ */
+.steps{list-style:none;padding:0;margin:0;counter-reset:s;display:grid;gap:10px}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;background:var(--cream);border-radius:8px;padding:14px 16px;margin:0}
+.steps li::before{content:counter(s);flex:0 0 32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;margin-top:2px}
+.steps b{display:block;color:var(--navy)}
+
+/* 表 */
+table.info{width:100%;border-collapse:collapse;margin:0 0 14px}
+table.info th,table.info td{border-bottom:1px solid var(--line);padding:12px 8px;text-align:left;vertical-align:top}
+table.info th{width:9em;color:var(--sub);font-weight:600;white-space:nowrap}
+table.info ul{margin:0;padding-left:1.2em}
+
+/* 連絡先の箱 */
+.contact-box{border:2px solid var(--navy);border-radius:10px;padding:20px 22px;margin:0 0 14px}
+.contact-box dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 18px}
+.contact-box dt{color:var(--sub);font-weight:600}
+.contact-box dd{margin:0;font-size:19px;word-break:break-all}
+.contact-box dd.small{font-size:16px}
+
+.note{font-size:15px;color:var(--sub)}
+
+/* 公開前に埋める所の印 */
+.todo{background:#fff3b0;color:#5a4500;border:1px dashed #c9a400;border-radius:3px;padding:0 4px;font-size:.92em}
+
+/* フッター */
+.site-footer{background:var(--navy);color:#fff;font-size:14px}
+.site-footer .wrap{padding-top:26px;padding-bottom:26px}
+.site-footer nav{display:flex;flex-wrap:wrap;gap:6px 20px;margin-bottom:10px}
+.site-footer a{color:#fff}
+.site-footer small{opacity:.8}
+
+@media (max-width:600px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .brand img{height:32px}
+  .hero h1{font-size:23px}
+  .page-title h1{font-size:22px}
+  h2{font-size:19px}
+  table.info th,table.info td{display:block;width:auto;white-space:normal;padding:4px 4px}
+  table.info th{padding-top:12px;border-bottom:none}
+  .contact-box{padding:16px}
+  .contact-box dl{grid-template-columns:1fr;gap:0}
+  .contact-box dd{margin-bottom:10px}
+}
+
+/* 写真入りの見出し(10/20) */
+.hero-photo{background:#2b3150 url(hero.jpg) center right/cover no-repeat}
+.hero-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(35,42,74,.88) 0%,rgba(35,42,74,.72) 42%,rgba(35,42,74,.15) 75%,rgba(35,42,74,0) 100%)}
+.hero-photo .wrap{position:relative;z-index:1;padding-top:72px;padding-bottom:72px}
+.hero-photo h1,.hero-photo p{max-width:30em;text-shadow:0 1px 3px rgba(0,0,0,.25)}
+
+/* 流れの絵 */
+.ico{width:30px;height:30px;flex:0 0 30px;fill:none;stroke:var(--navy);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ico .ac{fill:var(--wine);stroke:none}
+.steps li{align-items:center}
+.steps li .ico{margin-left:-2px}
+
+/* 3つの欄(横長の段) */
+.cards{display:grid;grid-template-columns:1fr;gap:12px}
+.card{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:5px solid var(--wine);border-radius:10px;padding:18px 20px}
+.card .ico{width:40px;height:40px;flex:0 0 40px;stroke:var(--wine);margin-top:2px}
+.card h3{margin:0 0 6px;font-size:18px;line-height:1.5;color:var(--navy)}
+.card p{margin:0;font-size:16px;line-height:1.8}
+
+/* 連絡先の帯 */
+.band{background:var(--cream);border-radius:12px;padding:28px 24px}
+.band .contact-box{background:#fff}
+
+@media (max-width:600px){
+  .hero-photo{background-position:70% center}
+  .hero-photo::before{background:linear-gradient(180deg,rgba(35,42,74,.62) 0%,rgba(35,42,74,.5) 100%)}
+  .hero-photo .wrap{padding-top:48px;padding-bottom:48px}
+  .card{gap:14px;padding:16px}
+  .card .ico{width:32px;height:32px;flex-basis:32px}
+  .band{padding:22px 16px}
+}
+
+/* 流れ(つながった形。10/20) */
+.flow{list-style:none;margin:8px 0 0;padding:0;counter-reset:f;position:relative}
+.flow li{counter-increment:f;position:relative;padding:0 0 22px 56px;margin:0}
+.flow li::before{content:counter(f);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:#fff;border:2px solid var(--wine);color:var(--wine);font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;z-index:1}
+.flow li::after{content:"";position:absolute;left:17px;top:36px;bottom:0;width:2px;background:#e3c9ce}
+.flow li:last-child{padding-bottom:0}
+.flow li:last-child::after{display:none}
+.flow b{display:block;color:var(--navy);font-size:17px;line-height:1.5;padding-top:5px;margin-bottom:2px}
+.flow div{color:#3c3a44}
+
+/* 明るい写真の見出し(10/20) */
+.hero-light{position:relative;background:#f7f5f0 url(hero.jpg) right center/cover no-repeat;overflow:hidden}
+.hero-light::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.25) 64%,rgba(255,255,255,0) 80%)}
+.hero-light .wrap{position:relative;z-index:1;padding-top:72px;padding-bottom:72px}
+.hero-light .svc{color:var(--wine);font-size:15px;letter-spacing:.08em;margin:0 0 8px;font-weight:600}
+.hero-light h1{font-size:30px;line-height:1.5;margin:0 0 14px;letter-spacing:.04em;color:var(--navy);max-width:16em}
+.hero-light p{margin:0;max-width:27em;color:#2f2d36}
+@media (max-width:600px){
+  .hero-light{background:#fff url(hero.jpg) center bottom/100% auto no-repeat}
+  .hero-light::before{background:linear-gradient(180deg,#fff 0%,#fff 55%,rgba(255,255,255,0) 72%)}
+  .hero-light .wrap{padding-top:36px;padding-bottom:62vw}
+  .hero-light h1{font-size:23px}
+  .flow li{padding-left:50px}
+}
+
+/* 流れ(同じ大きさの枠を並べる。LIFULL介護の形を参考。10/20) */
+.flow-cards{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.flow-cards li{margin:0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 16px 18px;display:flex;flex-direction:column}
+.flow-cards .no{align-self:flex-start;background:var(--wine);color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;border-radius:4px;padding:2px 8px;margin-bottom:10px}
+.flow-cards b{color:var(--navy);font-size:17px;line-height:1.5;margin-bottom:6px}
+.flow-cards p{margin:0;font-size:15px;line-height:1.75;color:#3c3a44}
+@media (max-width:760px){.flow-cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.flow-cards{grid-template-columns:1fr;gap:10px}.flow-cards li{padding:14px 16px}}
+
+/* 3つのステップ(スーモカウンター・楽天銀行の形を参考。10/20) */
+.step3{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:34px}
+.step3 li{position:relative;margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 18px;text-align:center}
+.step3 li:not(:last-child)::after{content:"";position:absolute;right:-24px;top:50%;width:14px;height:14px;border-top:3px solid var(--wine);border-right:3px solid var(--wine);transform:translateY(-50%) rotate(45deg)}
+.step3 .n{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--wine);color:#fff;font-weight:700;font-size:16px}
+.step3 b{display:block;margin:8px 0 6px;color:var(--navy);font-size:19px}
+.step3 p{margin:0;font-size:15px;line-height:1.75;text-align:left;color:#3c3a44}
+.after{margin:16px 0 0;padding:12px 16px;background:var(--cream);border-radius:8px;font-size:15px}
+@media (max-width:600px){
+  .step3{grid-template-columns:1fr;gap:30px}
+  .step3 li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-22px;transform:translateX(-50%) rotate(135deg)}
+}
+
+/* ステップの後の写真(10/20) */
+.photo-band{margin:40px 0 0}
+.photo-band img{display:block;width:100%;height:auto;aspect-ratio:1376/606;object-fit:cover;border-radius:12px}
+@media (max-width:600px){.photo-band{margin-top:32px}.photo-band img{aspect-ratio:4/3;object-position:30% center}}
+
+/* 3つの段をまとめる見出しの帯(写真入り。10/20) */
+.promise-head{position:relative;height:220px;border-radius:12px;overflow:hidden;background:#f3efe8 url(family_walk.jpg) 70% 40%/cover no-repeat;margin-bottom:16px;display:flex;align-items:center}
+.promise-head::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.93) 0%,rgba(255,255,255,.8) 30%,rgba(255,255,255,0) 52%)}
+.promise-head h2{position:relative;margin:0 0 0 28px;border-left:5px solid var(--wine);padding-left:12px;font-size:22px}
+@media (max-width:600px){
+  .promise-head{height:auto;flex-direction:column;align-items:stretch;background:none}
+  .promise-head::before{display:none}
+  .promise-head h2{margin:0 0 12px;font-size:19px}
+  .promise-head::after{content:"";display:block;height:170px;border-radius:12px;background:url(family_walk.jpg) 70% 40%/cover no-repeat}
+}
+
+/* 連絡先の帯(LIFULL介護・笑美面・スーモカウンター・ベリーベストの形を参考。10/20) */
+.cta{background:var(--cream);border-top:1px solid var(--line);margin-top:48px}
+.cta .wrap{padding-top:44px;padding-bottom:44px}
+.cta h2{text-align:center;border:none;padding:0;font-size:24px;margin-bottom:10px}
+.cta-lead{text-align:center;margin:0 auto 24px;max-width:42em}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cta-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 22px 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.cta-tag{background:#f6e7ea;color:var(--wine);font-size:13px;font-weight:700;border-radius:999px;padding:3px 12px}
+.cta-card h3{display:flex;align-items:center;gap:8px;margin:12px 0 8px;font-size:19px;color:var(--navy)}
+.cta-ico{width:24px;height:24px;fill:none;stroke:var(--wine);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cta-main{margin:0 0 4px;font-size:19px;font-weight:600;word-break:break-all}
+.cta-tel{font-size:28px;letter-spacing:.04em;color:var(--navy)}
+.cta-sub{margin:0;font-size:14px;color:var(--sub)}
+.cta-btn{margin-top:auto;display:block;width:100%;max-width:280px;background:var(--wine);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 16px}
+.cta-card p:last-of-type{margin-bottom:18px}
+.cta-btn:hover{opacity:.9}
+.cta .note{text-align:center;margin:20px 0 0}
+main{padding-bottom:0}
+@media (max-width:600px){
+  .cta .wrap{padding-top:32px;padding-bottom:32px}
+  .cta h2{font-size:20px}
+  .cta-lead{text-align:left}
+  .cta-lead br.pc{display:none}
+  .cta-grid{grid-template-columns:1fr}
+  .cta-tel{font-size:25px}
+}
+
+/* メールを主にし、電話は1行に控える(笑美面の問い合わせページ・スーモカウンターの形を参考。10/20) */
+.cta-mail{max-width:520px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px 22px 26px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.cta-mail h3{display:flex;align-items:center;gap:8px;margin:12px 0 8px;font-size:20px;color:var(--navy)}
+.cta-mail .cta-main{margin-bottom:18px}
+.cta-tel-line{text-align:center;margin:18px 0 0;font-size:14px;color:var(--sub)}
+.cta-tel-line a{color:var(--sub)}
+
+/* 電話は枠を残し、メールより控えめに見せる(10/20) */
+.cta-tag-sub{background:#eef0f4;color:var(--sub)}
+.cta-card-sub .cta-main{font-size:19px;color:var(--ink)}
+.cta-btn-sub{background:#fff;color:var(--wine);border:2px solid var(--wine);padding:10px 16px}
+
+/* 入居後の一文を、3つのステップに続く段として見せる(笑美面の「STEP 7 ご入居後サポート」を参考。10/20) */
+.after-box{position:relative;margin-top:20px;display:flex;align-items:center;gap:18px;background:#fff;border:2px solid var(--wine);border-radius:12px;padding:18px 22px}
+.after-box::before{content:none;position:absolute;left:50%;top:-24px;width:14px;height:14px;border-top:3px solid var(--wine);border-right:3px solid var(--wine);transform:translateX(-50%) rotate(135deg)}
+.after-tag{flex:0 0 auto;background:var(--wine);color:#fff;font-weight:700;font-size:15px;border-radius:999px;padding:6px 16px}
+.after-box b{display:block;color:var(--navy);font-size:19px;margin-bottom:2px}
+.after-box p{margin:0;font-size:15px;line-height:1.75;color:#3c3a44}
+@media (max-width:600px){
+  .after-box{flex-direction:column;align-items:flex-start;gap:10px;padding:16px}
+  .after-box{margin-top:30px}
+  .after-box::before{content:"";top:-22px}
+}
+.after-box>p{font-size:17px;font-weight:600;color:var(--navy);line-height:1.7}
+
+/* 全体の微修正(10/20) */
+/* 日本語を文節の切れ目で折り返す(「ご/本人」「日時/は」のような折れ方を防ぐ) */
+h1,h2,h3,p,li,dd,b{word-break:auto-phrase;text-wrap:pretty}
+/* 角の丸みをそろえる */
+.flow-cards li,.card,.step3 li,.after-box,.cta-card,.promise-head,.hero-light{border-radius:12px}
+.hero-light{border-radius:0}
+/* 一番上の文の幅を広げ、折り返しを減らす */
+.hero-light p{max-width:30em}
+/* 3つのステップ：枠の中を少し広くし、矢印の間を詰める */
+.step3{gap:28px}
+.step3 li{padding:20px 16px}
+.step3 li:not(:last-child)::after{right:-21px}
+/* 3つの段：左の線を細く */
+.card{border-left-width:4px}
+/* 見出しの上の余白をそろえる */
+section{margin-top:44px}
+.promise{margin-top:40px}
+@media (max-width:600px){
+  .nav{gap:4px 14px;font-size:14px}
+  section{margin-top:36px}
+}
+/* 幅の狭い枠の中は、文節で折ると行が短く切れすぎるため、通常の折り返しにする */
+.step3 p,.card p,.cta-card p{word-break:normal;text-wrap:wrap}
+
+/* 会社情報：ごあいさつの帯(背景を消した写真を、帯の下端にそろえる。ベネッセスタイルケア・GA technologies の形を参考。10/20) */
+/* ページ名は色の帯にせず白地に置き、ごあいさつの帯とぶつけない(ベネッセスタイルケア・GA technologies の形。10/20) */
+.page-title-plain{background:#fff;border-bottom:none}
+.page-title-plain .wrap{padding-top:32px;padding-bottom:24px}
+/* あいさつの本文も帯の中に入れ、文を写真に重ねて帯を短くする(トップの一番上の写真と同じ重ね方。10/20) */
+.mb{position:relative;overflow:hidden;margin:0;background:linear-gradient(100deg,#f4f6fa 0%,#e9edf5 55%,#dfe4ef 100%)}
+.mb-in{position:relative;max-width:860px;margin:0 auto;padding:0 20px}
+/* 写真は帯の高さいっぱいに右下へ置く。文がかかる左側(肩のあたり)は、帯の色へ薄めて文を読みやすくする */
+.mb-photo{position:absolute;z-index:0;right:-10px;bottom:0;height:100%;max-height:520px;width:auto;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,transparent 14%,#000 36%);mask-image:linear-gradient(to right,transparent 0%,transparent 14%,#000 36%)}
+.mb-text{position:relative;z-index:1;max-width:61%;padding:32px 0 26px}
+.msg-label{display:block;color:var(--wine);font-size:12px;font-weight:700;letter-spacing:.28em;margin:0 0 8px}
+.mb h2.msg-lead{font-size:24px;line-height:1.5;color:var(--navy);font-weight:700;letter-spacing:.04em;margin:0 0 12px;padding:0;border:none}
+.msg-body{font-size:15px;line-height:1.85;color:#2f2d36}
+.msg-body p{margin:0 0 6px}
+.msg-sign{margin:12px 0 0;color:var(--sub);font-size:13px;letter-spacing:.06em}
+.msg-sign b{display:inline-block;color:var(--ink);font-size:21px;letter-spacing:.16em;font-weight:600;margin-left:12px;vertical-align:-2px}
+/* 幅の狭い画面：写真は右上に置き、見出しを写真の左に並べる。本文は写真の下側(服のあたりを帯の色へ薄めた所)に重ねる */
+@media (max-width:760px){
+  .page-title-plain .wrap{padding-top:28px;padding-bottom:20px}
+  .mb-in{padding:0 16px}
+  .mb-photo{top:0;bottom:auto;right:-14px;height:clamp(220px,46vw,300px);max-height:none;
+    -webkit-mask-image:linear-gradient(to bottom,#000 52%,transparent 88%);mask-image:linear-gradient(to bottom,#000 52%,transparent 88%)}
+  .mb-text{max-width:none;padding:22px 0 22px}
+  .msg-label{font-size:11px}
+  .mb h2.msg-lead{font-size:19px;max-width:52%;margin-bottom:24px}
+  .msg-body{font-size:14.5px;line-height:1.8}
+  .msg-sign{font-size:12px}
+  .msg-sign b{font-size:19px}
+}
+@media (min-width:521px) and (max-width:760px){
+  .mb h2.msg-lead{font-size:22px;margin-bottom:26px}
+}
+table.info td.sub,table.info td.sub a{color:var(--sub);font-size:15px}
+
+/* 運営会社の表の上の写真(ほけんの窓口の「表の真上に写真」、みんかいの「相談員と本人・家族の場面」を参考。角の丸みはトップの写真の帯にそろえる。10/20) */
+.company-photo{margin:0 0 18px}
+.company-photo img{display:block;width:100%;height:280px;object-fit:cover;object-position:50% 45%;border-radius:12px}
+@media (max-width:600px){.company-photo img{height:auto;aspect-ratio:16/10;object-position:55% 50%}}
+/* 表の上の写真に、うっすらぼかしをかけ、顔をはっきりさせない(トップの写真と見え方をそろえる。10/20) */
+.company-photo{position:relative;overflow:hidden;border-radius:12px}
+.company-photo img{filter:blur(.75px) brightness(1.03);transform:scale(1.012)}
+/* トップの一番上の写真と同じく、白をうっすら重ねてやわらげる */
+.company-photo::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.10);pointer-events:none}
+/* 上のメニューを、どのページでも画面の上に固定する(10/20) */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+/* 方針ページ：最初の前文を、会社情報のごあいさつの帯と同じ色の帯に入れる(10/20) */
+.lead-band{margin:0;background:linear-gradient(100deg,#f4f6fa 0%,#e9edf5 55%,#dfe4ef 100%)}
+.lead-band .wrap{padding-top:30px;padding-bottom:22px}
+.lead-band p{margin:0 0 12px;color:#2f2d36}
+/* 方針ページ：10章の窓口の枠の中の文字を、本文と同じ大きさ・太さにする(10/20) */
+.contact-box-plain dd,.contact-box-plain dd.small{font-size:inherit;font-weight:400}
+/* 会社情報・お問い合わせ：写真の中に見出しを置く(トップの「安心してご相談いただくために」と同じ形。ぼかしは会社情報の写真と同じ0.75px。10/20) */
+.photo-head{position:relative;height:220px;border-radius:12px;overflow:hidden;margin-bottom:16px;display:flex;align-items:center;background:#f3efe8}
+.photo-head img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(.75px) brightness(1.03);transform:scale(1.012)}
+.photo-head::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(255,255,255,.93) 0%,rgba(255,255,255,.8) 30%,rgba(255,255,255,0) 52%)}
+.photo-head h2{position:relative;z-index:2;margin:0 0 0 28px;border-left:5px solid var(--wine);padding-left:12px;font-size:22px}
+/* 相談の写真：左の相談員の後ろ姿に見出しが重なるため、写真を少し大きくして右へ寄せ、ご本人とご家族を右側に見せる */
+.photo-head-consult img{object-position:50% 40%;transform:scale(1.25);transform-origin:95% 45%}
+.photo-head-tour img{object-position:50% 45%;transform:translateX(7.5%) scale(1.15)}
+/* 相談の写真は、左に残る相談員の影が見出しの後ろで透けないよう、左側を少し濃く白くする */
+.photo-head-consult::before{background:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.9) 32%,rgba(255,255,255,0) 54%)}
+@media (max-width:600px){
+  .photo-head{height:auto;flex-direction:column;align-items:stretch;background:none;overflow:visible}
+  .photo-head::before{display:none}
+  .photo-head h2{order:-1;margin:0 0 12px;font-size:19px}
+  .photo-head img{position:relative;inset:auto;height:170px;border-radius:12px;transform:none}
+  .photo-head-consult img{object-position:60% 45%}
+}
+/* 写真を帯の右側に縮めて置き、人物の頭まで全体を見せる。左は無地の淡い面にして見出しを置く(トップの帯と同じく、写真の左端を淡い面へなじませる。10/20) */
+.photo-head{background:linear-gradient(90deg,#fbfaf8 0%,#f5f3ef 100%)}
+.photo-head::before{display:none}
+.photo-head img,.photo-head-consult img,.photo-head-tour img{left:auto;right:0;width:60%;transform:none;object-fit:cover;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 24%);mask-image:linear-gradient(to right,transparent 0%,#000 24%)}
+.photo-head-consult img{object-position:50% 50%}
+.photo-head-tour img{object-position:50% 35%}
+@media (max-width:600px){
+  .photo-head{background:none}
+  .photo-head img,.photo-head-consult img,.photo-head-tour img{width:100%;-webkit-mask-image:none;mask-image:none}
+  .photo-head-tour img{object-position:50% 30%}
+}
+/* お問い合わせ：トップの連絡先の帯と同じ枠(メールを主、電話は控えめ)。ページ内では本文の幅に合わせる(10/20) */
+.contact-cards{margin:18px 0 10px}
+.contact-cards .cta-sub{margin:4px 0 16px;font-size:14px;line-height:1.7;text-align:center}
+.contact-cards .cta-card p.cta-main{margin-bottom:4px}
+.fax-line{margin:6px 0 0}
+.contact-cards .cta-card p.cta-sub{word-break:auto-phrase;text-wrap:pretty}
